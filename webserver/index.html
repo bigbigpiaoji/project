@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>xx-后台管理系统</title>
+  <link rel="stylesheet/less" href="./css/reset.less">
+  <link rel="stylesheet/less" href="./css/common.less">
+  <link rel="stylesheet" href="//at.alicdn.com/t/font_1110021_bv6rtxt80dt.css">
+</head>
+<body>
+
+  <header class="lv-header">
+    <div class="lv-header-left">
+      <a href="/" class="logo"><h1>骚猪 - 我的天，你真帅</h1></a>
+    </div>
+    <div class="lv-header-right">
+      <div class="btn"><i class="iconfont icon-setting"></i></div>
+      <div class="btn"><i class="iconfont icon-edit"></i></div>
+      <div class="user">
+        <img class="avator" src="./images/avator.png" alt="">
+        <span class="nickname">Admin</span>
+        <i class="iconfont icon-down"></i>
+      </div>
+    </div>
+  </header>
+
+  <div class="lv-main">
+
+    <div class="lv-menu">
+      <ul>
+        <li class="lv-menu-item active">
+          <i class="iconfont icon-home"></i>
+          <span class="lv-menu-item__title">系统首页</span>
+        </li>
+        <li class="lv-menu-item">
+          <i class="iconfont icon-team"></i>
+          <span class="lv-menu-item__title">用户管理</span>
+        </li>
+      </ul>
+    </div>
+
+    <div class="lv-body">
+
+      <!-- 工具栏 -->
+      <div class="lv-toolbar">
+        <div class="lv-toolbar-left">
+          <button class="btn">新增用户</button>
+          <button class="btn">新增用户</button>
+        </div>
+        <div class="lv-toolbar-right">
+          <div class="lv-toolbar-search-box">
+            <input type="text" placeholder="目前只支持搜索昵称" />
+            <button>搜索</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 分页 -->
+      <div class="lv-pagination right">
+        <ul>
+          <li class="lv-pagination__item prev"><a href="#"><i class="iconfont icon-doubleleft"></i></a></li>
+          <li class="lv-pagination__item active"><a href="#">1</a></li>
+          <li class="lv-pagination__item"><a href="#">2</a></li>
+          <li class="lv-pagination__item"><a href="#">3</a></li>
+          <li class="lv-pagination__item"><a href="#">4</a></li>
+          <li class="lv-pagination__item"><a href="#">5</a></li>
+          <li class="lv-pagination__item next"><a href="#"><i class="iconfont icon-doubleright"></i></a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="./js/less.min.js"></script>
+</body>
+</html>

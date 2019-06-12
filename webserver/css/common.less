@@ -1,0 +1,325 @@
+@color: #464646;
+
+body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: @color;
+}
+
+.lv-main {
+  flex: 1;
+  display: flex;
+}
+
+// 头部
+.lv-header {
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  padding-left: 20px;
+  background-color: #363636;
+
+  &-left {
+    .logo {
+      display: block;
+      font-size: 24px;
+      line-height: 60px;
+      color: #000;
+      text-decoration: none;
+      color: #fff;
+    }
+  }
+
+  &-right {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+
+    .btn {
+      width: 60px;
+      height: 60px;
+      line-height: 60px;
+      text-align: center;
+      border-left: 1px solid #3f3f3f;
+      cursor: pointer;
+
+      .iconfont {
+        font-size: 22px;
+        color: #a5a5a5;
+      }
+
+      &:hover {
+        .iconfont {
+          color: #fff;
+        }
+      }
+    }
+
+    .user {
+      display: flex;
+      align-items: center;
+      padding: 8px;
+      cursor: pointer;
+
+      .avator {
+        display: block;
+        width: 40px;
+        height: 40px;
+      }
+
+      .nickname {
+        padding: 0 6px;
+        color: #a5a5a5;
+      }
+
+      .iconfont {
+        color: #a5a5a5;
+      }
+
+      &:hover {
+        background: #464646;
+      }
+    }
+  }
+}
+
+// 登录注册
+.lv-login, .lv-register {
+  width: 450px;
+  margin: 14% auto;
+
+  &-logo {
+    text-align: center;
+
+    a {
+      display: block;
+      font-size: 24px;
+      line-height: 2;
+      color: #000;
+      text-decoration: none;
+    }
+
+    span {
+      font-size: 16px;
+      margin: 0;
+      padding: 0;
+    }
+  }
+
+  &-body {
+    border-radius: 4px;
+    padding: 110px 40px 40px;
+    margin-top: -80px;
+    background: #fff;
+
+    .form-group {
+      position: relative;
+      margin-bottom: 15px;
+
+      input {
+        background: #ECF0F1;
+        width: 100%;
+        height: 48px;
+        padding-left: 60px;
+        padding-right: 60px;
+        font-size: 16px;
+        border: 1px solid #ccc;
+      }
+
+      .iconfont {
+        position: absolute;
+        line-height: 48px;
+        font-size: 18px;
+        border-right: 1px solid #E3E4E4;
+        top: 0;
+        left: 0;
+        width: 50px;
+        text-align: center;
+        display: block;
+      }
+    }
+
+    &__btn {
+      display: block;
+      width: 100%;
+      height: 54px;
+      font-size: 16px;
+      color: #fff;
+      background: #3FD5BC;
+      border-color: #38b9a3;
+      border-radius: 2px;
+      border: none;
+
+      &:hover {
+        background: #3eceb6;
+        border-color: #3FD5BC;
+      }
+
+      &:active {
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+      }
+    }
+  }
+}
+
+// 左侧菜单
+.lv-menu {
+  width: 200px;
+  background-color: #363636;
+  margin: 10px 0 10px 20px;
+  padding: 8px;
+  border-radius: 4px;
+
+  .lv-menu-item {
+    display: flex;
+    height: 40px;
+    line-height: 40px;
+    margin-bottom: 8px;
+    background-color: #414141;
+    border-radius: 4px;
+    cursor: pointer;
+
+    .iconfont {
+      width: 50px;
+      font-size: 20px;
+      text-align: center;
+      color: #a5a5a5;
+    }
+
+    &__title {
+      font-size: 16px;
+      color: #a5a5a5;
+    }
+
+    &:hover, &.active {
+      background-color: #3eb5ed;
+      .iconfont {
+        color: #fff;
+      }
+
+      .lv-menu-item__title {
+        color: #fff;
+      }
+    }
+  }
+}
+
+// 右侧主体内容
+.lv-body {
+  flex: 1;
+  background-color: #f4f4f4;
+  margin: 10px 20px;
+  padding: 8px;
+  border-radius: 4px;
+  overflow-y: auto;
+}
+
+// 分页
+.lv-pagination {
+  display: flex;
+  align-items: center;
+
+  ul {
+    display: flex;
+    padding-left: 1px;
+  }
+
+  &__item {
+    border: 1px solid #000;
+    margin-left: -1px;
+    &.prev {
+      border-top-left-radius: 4px;
+      border-bottom-left-radius: 4px;
+    }
+    &.next {
+      border-top-right-radius: 4px;
+      border-bottom-right-radius: 4px;
+    }
+    &.active {
+      background-color: #3eb5ed;
+    }
+    a {
+      display: block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      text-align: center;
+      font-size: 20px;
+      color: #414141;
+      text-decoration: none;
+    }
+  }
+
+  &.left {
+    justify-content: left;
+  }
+
+  &.right {
+    justify-content: right;
+  }
+
+  &.center {
+    justify-content: center;
+  }
+}
+
+// 工具栏
+.lv-toolbar {
+  display: flex;
+  justify-content: space-between;
+  height: 60px;
+  background-color: #414141;
+  margin-bottom: 20px;
+
+  &-left {
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+
+    .btn {
+      height: 40px;
+      text-align: center;
+      font-size: 16px;
+      padding: 0 15px;
+      border: none;
+      border-radius: 4px;
+      margin-right: 10px;
+
+      &:active {
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+      }
+    }
+  }
+
+  &-right {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    padding-right: 10px;
+  }
+
+  &-search-box {
+    input {
+      height: 40px;
+      font-size: 16px;
+      padding: 0 15px;
+      border: none;
+      border-radius: 4px;
+      margin-right: 2px;
+    }
+
+    button {
+      height: 40px;
+      text-align: center;
+      font-size: 16px;
+      padding: 0 15px;
+      border: none;
+      border-radius: 4px;
+
+      &:active {
+        box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+      }
+    }
+  }
+}
