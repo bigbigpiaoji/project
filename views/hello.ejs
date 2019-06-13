@@ -1,0 +1,16 @@
+  <%- include('./common/header.ejs') %>
+
+  <% if (userName) {%>
+    <h1>欢迎您，<%= userName %></h1>
+    <button>退出登录</button>
+  <% } else {%>
+    <button>登录</button>
+  <% } %>
+
+  <%= str %>
+
+  <!-- <%= str %> -->
+
+  <%%
+
+  <%- include('./common/footer.ejs') %>

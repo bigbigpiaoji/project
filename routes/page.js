@@ -4,6 +4,19 @@ const http = require('http');
 const path = require('path');
 const router = express.Router();
 
+router.get('/hello', (req, res) => {
+  res.render('hello', {
+    name: '张三',
+    userName: undefined, // 当前登录的用户的名字
+
+    str: '<h1>hello world</h1>'
+  })
+})
+
+router.get('/world', (req, res) => {
+  res.render('world.jade');
+})
+
 // 首页
 router.get('/', (req, res) => {
   let pageNum = parseInt(req.query.pageNum) || 1;
