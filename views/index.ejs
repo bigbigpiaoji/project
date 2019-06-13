@@ -5,8 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>xx-后台管理系统</title>
-  <link rel="stylesheet/less" href="./css/reset.less">
-  <link rel="stylesheet/less" href="./css/common.less">
+  <link rel="stylesheet/less" href="/css/reset.less">
+  <link rel="stylesheet/less" href="/css/common.less">
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1110021_bv6rtxt80dt.css">
   <link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
@@ -21,7 +21,9 @@
       <div class="btn"><i class="iconfont icon-edit"></i></div>
       <div class="user">
         <img class="avator" src="./images/avator.png" alt="">
-        <span class="nickname">Admin</span>
+        <span class="nickname">
+          <%= name %>
+        </span>
         <i class="iconfont icon-down"></i>
       </div>
     </div>
@@ -70,15 +72,17 @@
           </tr>
         </thead>
         <tbody id="tbody">
-          <tr>
-            <td>1</td>
-            <td>张三</td>
-            <td>18</td>
-            <td>sdfsadf</td>
-            <td>
-              <button class="btn btn-danger">删除</button>
-            </td>
-          </tr>
+          <% for (var i = 0; i < list.length; i++) { %>
+            <tr>
+              <td><%= i + 1%></td>
+              <td><%= list[i].name %></td>
+              <td><%= list[i].age %></td>
+              <td><%= list[i].grade %></td>
+              <td>
+                <button class="btn btn-danger">删除</button>
+              </td>
+            </tr>
+          <% } %>
         </tbody>
       </table>
 
@@ -98,8 +102,8 @@
     </div>
   </div>
 
-  <script src="./js/less.min.js"></script>
+  <script src="/js/less.min.js"></script>
   <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
-  <script src="./js/index.js"></script>
+  <!-- <script src="/js/index.js"></script> -->
 </body>
 </html>
