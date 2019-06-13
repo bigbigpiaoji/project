@@ -75,7 +75,7 @@
           <% for (var i = 0; i < list.length; i++) { %>
             <tr>
               <td><%= i + 1%></td>
-              <td><%= list[i].name %></td>
+              <td><%= list[i].studentName %></td>
               <td><%= list[i].age %></td>
               <td><%= list[i].grade %></td>
               <td>
@@ -90,15 +90,14 @@
       <div class="lv-pagination right">
         <ul>
           <li class="lv-pagination__item prev"><a href="#"><i class="iconfont icon-doubleleft"></i></a></li>
-          <li class="lv-pagination__item active"><a href="#">1</a></li>
-          <li class="lv-pagination__item"><a href="#">2</a></li>
-          <li class="lv-pagination__item"><a href="#">3</a></li>
-          <li class="lv-pagination__item"><a href="#">4</a></li>
-          <li class="lv-pagination__item"><a href="#">5</a></li>
+          <%for (var i = 1; i <= totalPage; i++) {%>
+            <li class="lv-pagination__item <%= i === pageNum ? 'active' : '' %>">
+              <a href="/?pageNum=<%= i %>&pageSize=<%= pageSize %>"><%= i %></a>
+            </li>
+          <%}%>
           <li class="lv-pagination__item next"><a href="#"><i class="iconfont icon-doubleright"></i></a></li>
         </ul>
       </div>
-
     </div>
   </div>
 
