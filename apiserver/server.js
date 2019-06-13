@@ -12,6 +12,7 @@ app.use(express.urlencoded({ extended: true }));
 // 设置允许跨域 cors
 app.use((req, res, next) => {
   res.set('Access-Control-Allow-Origin', '*');
+  res.set('Access-Control-Allow-Methods', 'GET, POST, DELETE, UPDATE, PUT');
   next();
 })
 

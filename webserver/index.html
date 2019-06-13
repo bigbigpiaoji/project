@@ -8,6 +8,7 @@
   <link rel="stylesheet/less" href="./css/reset.less">
   <link rel="stylesheet/less" href="./css/common.less">
   <link rel="stylesheet" href="//at.alicdn.com/t/font_1110021_bv6rtxt80dt.css">
+  <link rel="stylesheet" href="https://cdn.bootcss.com/twitter-bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
 
@@ -51,11 +52,35 @@
         </div>
         <div class="lv-toolbar-right">
           <div class="lv-toolbar-search-box">
-            <input type="text" placeholder="目前只支持搜索昵称" />
-            <button>搜索</button>
+            <input id="searchVal" type="text" placeholder="目前只支持搜索昵称" />
+            <button id="searchBtn">搜索</button>
           </div>
         </div>
       </div>
+
+      <!-- 表格 - 将数据给显示出来 -->
+      <table class="table">
+        <thead>
+          <tr>
+            <th>序号</th>
+            <th>学生名字</th>
+            <th>学生年龄</th>
+            <th>学生班级</th>
+            <th>操作</th>
+          </tr>
+        </thead>
+        <tbody id="tbody">
+          <tr>
+            <td>1</td>
+            <td>张三</td>
+            <td>18</td>
+            <td>sdfsadf</td>
+            <td>
+              <button class="btn btn-danger">删除</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
       <!-- 分页 -->
       <div class="lv-pagination right">
@@ -74,5 +99,7 @@
   </div>
 
   <script src="./js/less.min.js"></script>
+  <script src="https://cdn.bootcss.com/jquery/3.4.1/jquery.min.js"></script>
+  <script src="./js/index.js"></script>
 </body>
 </html>
