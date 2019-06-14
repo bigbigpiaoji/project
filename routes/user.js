@@ -38,19 +38,23 @@ router.post('/sign-up', (req, res) => {
 
 // /api/user/sign-in
 router.post('/sign-in', (req, res) => {
+  // console.log('ajax的登录进来了');
   let username = req.body.username;
   let password = req.body.password;
+  // console.log(username);
+  // console.log(password);
   UserModel.findOne({
     username,
   }).then(data => {
-    console.log(data); // data 就是找到的那个记录的对象
+    // console.log(data); // data 就是找到的那个记录的对象
     if (data) {
       // 在比较密码
       let isOk = bcrypt.compareSync(password, data.password);
       if (isOk) {
         res.send({
           code: 0,
-          msg: 'ok'
+          msg: 'ok',
+          data: data
         })
       } else {
         // 密码错误
