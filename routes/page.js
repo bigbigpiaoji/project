@@ -21,7 +21,8 @@ router.get('/world', (req, res) => {
 // 首页
 router.get('/', (req, res) => {
   // 判断用户是否登录
-  if (!req.cookies.userInfo) {
+  console.log(req.session);
+  if (!req.session.userInfo) {
     // 没有登录 - 跳转到登录页面
     res.redirect('/login');
     return;
@@ -94,9 +95,14 @@ router.post('/handleLogin', (req, res) => {
       if (data.code === 0) {
         // 登录成功
         // 1. 写入cookie
-        res.cookie('userInfo', JSON.stringify({ username: data.data.username }), {
-          maxAge: 1000 * 60
-        })
+        // res.cookie('userInfo', JSON.stringify({ username: data.data.username }), {
+        //   maxAge: 1000 * 60
+        // })
+
+        // cookie与session, 写session
+        req.session.userInfo = {
+          username: data.data.username
+        }
         res.redirect('/');
       } else {
         // 登录失败

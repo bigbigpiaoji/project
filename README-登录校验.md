@@ -16,6 +16,10 @@ session与cookie校验的流程：
 
 1. 登录成功，给 session 中写入当前登录用户的信息，并写入一个跟当前session相关的cookie给前端浏览器
 
+a: {
+
+}
+
   sessions : {
     'a': {
 
